@@ -357,7 +357,13 @@ def _size():
     Returns:
       (width, height) tuple of the screen size, in pixels.
     """
-    return (ctypes.windll.user32.GetSystemMetrics(0), ctypes.windll.user32.GetSystemMetrics(1))
+    # return (ctypes.windll.user32.GetSystemMetrics(0), ctypes.windll.user32.GetSystemMetrics(1))
+    return (ctypes.windll.user32.GetSystemMetrics(78), ctypes.windll.user32.GetSystemMetrics(79))
+    # Patch 'multi-screen'
+    # This was a possible solution to issue #9, solution by HixRa commented on 2 Sep 2019
+    # https://github.com/asweigart/pyautogui/issues/9#issuecomment-527236475
+    # Roadmap: Add multi-monitor support 
+
 
 
 def _moveTo(x, y):
